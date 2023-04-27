@@ -1,4 +1,4 @@
-const express = require("express");
+/* const express = require("express");
 const { isAdmin, isAuth } = require("../middlewares/auth");
 const bcrypt = require("bcrypt");
 const { generateSign } = require("../../utils/jwt/jwt");
@@ -107,10 +107,10 @@ router.post("/checksession", [isAuth], async (req, res, next) => {
   }
 });
 
-module.exports = router;
+module.exports = router; */
 
 
-/* const express = require("express");
+const express = require("express");
 const User = require("../models/users.model");
 const bcrypt = require("bcrypt");
 const { generateSign } = require("../../utils/jwt/jwt");
@@ -203,4 +203,4 @@ router.post("/checksession", [isAuth], async (req, res, next) => {
   }
 });
 
-module.exports = router; */
+module.exports = router;
