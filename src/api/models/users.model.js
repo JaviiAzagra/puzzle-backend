@@ -6,14 +6,9 @@ const Schema = moongoose.Schema;
 const userSchema = new Schema(
   {
     userName: { type: String, required: true, trim: true, unique: true },
-    img: {
-      type: String,
-      default:
-        "https://www.citypng.com/public/uploads/preview/download-profile-user-round-orange-icon-symbol-png-11639594360ksf6tlhukf.png",
-    },
+    img: {type: String, default: "https://www.citypng.com/public/uploads/preview/download-profile-user-round-orange-icon-symbol-png-11639594360ksf6tlhukf.png"},
     email: { type: String, required: true, trim: true, unique: true },
     password: { type: String, required: true, trim: true },
-    favorites: [{ type: moongoose.Schema.Types.ObjectId, ref: "movies" }],
   },
   {
     timestamps: true,

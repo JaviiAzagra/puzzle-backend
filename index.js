@@ -15,6 +15,7 @@ const server = express();
 //! Routes import
 const indexRoutes = require("./src/api/routes/index.routes");
 const userRoutes = require("./src/api/routes/users.routes");
+const padresRoutes = require("./src/api/routes/padres.routes")
 
 
 //! Enviromental variables
@@ -47,6 +48,7 @@ server.use(express.urlencoded({ extended: false }));
 // //! Routes
 server.use("/", indexRoutes); 
 server.use("/users", userRoutes);
+server.use("/parents", padresRoutes);
 
 server.use("*", (req, res) => {
   const error = new Error('PATH NOT FOUND! 404');
