@@ -40,26 +40,5 @@ const isAdmin = async (req, res, next) => {
   }
 };
 
-const isDoctor = async (req, res, next) => {
-  try {
-    const token = req.headers.authorization;
-    if (!token) {
-      return next("Unauthorized");
-    }
-    const parsedToken = token.replace("Bearer ", "");
-    const validToken = verifyJwt(parsedToken);
-    const parentLogged = await Parent.findById(validToken.id);
 
-    if (parentLogged.rol === "doctor") {
-      parentLogged.password = null;
-      req.parent = parentLogged;
-      next();
-    } else {
-      return next("You're not a !");
-    }
-  } catch (error) {
-    return next("Error");
-  }
-};
-
-module.exports = { isAuth, isAdmin, isDoctor };
+module.exports = { isAuth, isAdmin};
